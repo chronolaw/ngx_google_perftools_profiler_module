@@ -3,6 +3,8 @@ A better tools for nginx with google_perftools
 
 This module is inspired by official [`ngx_google_perftools_module`](https://nginx.org/en/docs/ngx_google_perftools_module.html).
 
+[![Build Status](https://travis-ci.org/chronolaw/ngx_google_perftools_profiler_module.svg?branch=master)](https://travis-ci.org/chronolaw/ngx_google_perftools_profiler_module)
+
 # Installation
 
 At first you must install [gperftools](https://github.com/gperftools/gperftools) library, For example:
