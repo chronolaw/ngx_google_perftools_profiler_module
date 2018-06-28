@@ -234,3 +234,46 @@ ngx_google_perftools_profiler_worker(ngx_cycle_t *cycle)
     return NGX_OK;
 }
 
+// The code below is for lua-resty-gperftoos
+
+/////////////////////////////////////////////////////////////////
+
+void
+ngx_lua_ffi_cpu_profiler_start(u_char* profile)
+{
+    if (ProfilerStart(profile)) {
+        ProfilerRegisterThread();
+    }
+}
+
+void
+ngx_lua_ffi_cpu_profiler_stop()
+{
+    ProfilerStop();
+}
+
+void
+ngx_lua_ffi_heap_profiler_start(u_char* profile, int interval)
+{
+    FLAGS_heap_profile_time_interval = interval;
+
+    HeapProfilerStart(profile);
+}
+
+void
+ngx_lua_ffi_heap_profiler_dump(u_char* reason)
+{
+    if (IsHeapProfilerRunning()) {
+        HeapProfilerDump(reason);
+    }
+}
+
+void
+ngx_lua_ffi_heap_profiler_stop()
+{
+    if (IsHeapProfilerRunning()) {
+        HeapProfilerStop();
+    }
+}
+
+/////////////////////////////////////////////////////////////////
