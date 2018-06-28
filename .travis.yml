@@ -35,7 +35,7 @@ install:
 
 script:
   - cd nginx-${NGINX_VERSION}/
-  -  ./configure --add-module=../src > build.log 2>&1 || (cat build.log && exit 1)
+  -  ./configure --add-module=../ > build.log 2>&1 || (cat build.log && exit 1)
   - make -j2 > build.log 2>&1 || (cat build.log && exit 1)
   - ./objs/nginx -V
   - export PATH=$PATH:`pwd`/objs
