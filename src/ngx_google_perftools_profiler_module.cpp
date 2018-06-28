@@ -241,9 +241,9 @@ ngx_google_perftools_profiler_worker(ngx_cycle_t *cycle)
 extern "C" {
 
 void
-ngx_lua_ffi_cpu_profiler_start(u_char* profile)
+ngx_lua_ffi_cpu_profiler_start(const u_char* profile)
 {
-    if (ProfilerStart(profile)) {
+    if (ProfilerStart((u_char *)profile)) {
         ProfilerRegisterThread();
     }
 }
@@ -255,18 +255,18 @@ ngx_lua_ffi_cpu_profiler_stop()
 }
 
 void
-ngx_lua_ffi_heap_profiler_start(u_char* profile, int interval)
+ngx_lua_ffi_heap_profiler_start(const u_char* profile, int interval)
 {
     FLAGS_heap_profile_time_interval = interval;
 
-    HeapProfilerStart(profile);
+    HeapProfilerStart((u_char *)profile);
 }
 
 void
-ngx_lua_ffi_heap_profiler_dump(u_char* reason)
+ngx_lua_ffi_heap_profiler_dump(const u_char* reason)
 {
     if (IsHeapProfilerRunning()) {
-        HeapProfilerDump(reason);
+        HeapProfilerDump((u_char *)reason);
     }
 }
 
