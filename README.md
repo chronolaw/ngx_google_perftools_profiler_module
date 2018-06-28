@@ -29,10 +29,21 @@ In `nginx.conf`:
 # profiler => cpu|heap|all
 # name => file that keeps profiling information
 # interval => time interval for dump heap profiling information, in seconds
-google_perftools profiler=all name=/path/to/file interval=1s;
+google_perftools profiler=all name=ngx_prof interval=1s;
 ```
 Profiles will be stored as `/path/to/file.<worker_pid>`.
 
+Then you can use `pprof` to visualize results, for example:
+
+```pprof
+pprof --svg /usr/local/nginx/sbin/nginx ./ngx_prof.4342 >a.svg
+pprof --svg /usr/local/nginx/sbin/nginx ./ngx_prof.4342.0007.heap >b.svg
+```
+
 # See Also
 
+* [ngx_cpp_dev](https://github.com/chronolaw/ngx_cpp_dev) - Nginx cpp development kit, with the power of C++11 and Boost Library.
+* [openresty_dev](https://github.com/chronolaw/openresty_dev) - OpenResty/Lua Programming
+* [favorite-nginx](https://github.com/chronolaw/favorite-nginx) - Selected favorite nginx modules and resources.
+* [annotated_nginx](https://github.com/chronolaw/annotated_nginx) - 注释nginx，学习研究源码
 
