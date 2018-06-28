@@ -1,6 +1,6 @@
 # ngx_google_perftools_profiler_module
 
-A better tools for nginx with google_perftools.
+A better tool for nginx with google_perftools.
 
 This module is inspired by official [`ngx_google_perftools_module`](https://nginx.org/en/docs/ngx_google_perftools_module.html).
 
