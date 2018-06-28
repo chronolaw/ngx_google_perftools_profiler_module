@@ -1,0 +1,15 @@
+# Copyright (C) 2018 chronolaw
+
+# link nginx with c++
+if [ $NGX_CC_NAME = "gcc" ]; then
+    LINK=g++
+fi
+
+ngx_addon_name=ngx_google_perftools_profiler_module
+ngx_module_type=CORE
+ngx_module_libs="-lprofiler -ltcmalloc -lstdc++"
+ngx_module_name=ngx_google_perftools_profiler_module
+ngx_module_srcs="$ngx_addon_dir/src/ngx_google_perftools_profiler_module.cpp"
+
+. auto/module
+
