@@ -9,6 +9,7 @@ At first you must install [gperftools](https://github.com/gperftools/gperftools)
 
 ```apt
 sudo apt-get install google-perftools
+sudo apt-get install libgoogle-perftools-dev
 ```
 
 Then configure nginx, add this module:

@@ -27,6 +27,7 @@ env:
 
 before_install:
   - sudo apt-get install google-perftools
+  - sudo apt-get install libgoogle-perftools-dev
   - sudo apt-get install -qq -y cpanminus libluajit-5.1-dev libgd-dev
   - sudo cpanm -v --notest Test::Nginx > build.log 2>&1 || (cat build.log && exit 1)
 
