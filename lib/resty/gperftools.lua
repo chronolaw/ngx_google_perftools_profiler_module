@@ -17,11 +17,11 @@ void ngx_lua_ffi_heap_profiler_stop();
 
 local proto = {
     _VERSION = '0.0.1',
-    cpu_profiler = {},
-    heap_profiler = {},
+    cpu = {},
+    heap = {},
     }
 
-proto.cpu_profiler.start = function(name)
+proto.cpu.start = function(name)
     if type(name) ~= "string" then
         return nil, "profiler needs a name"
     end
@@ -36,12 +36,12 @@ proto.cpu_profiler.start = function(name)
     return true
 end
 
-proto.cpu_profiler.stop = function()
+proto.cpu.stop = function()
     ffi_C.ngx_lua_ffi_cpu_profiler_stop()
     return true
 end
 
-proto.heap_profiler.start = function(name, n)
+proto.heap.start = function(name, n)
     if type(name) ~= "string" then
         return nil, "profiler needs a name"
     end
@@ -56,7 +56,7 @@ proto.heap_profiler.start = function(name, n)
     return true
 end
 
-proto.heap_profiler.dump = function(s)
+proto.heap.dump = function(s)
     if type(s) ~= "string" then
         return nil, "needs a reason"
     end
@@ -71,7 +71,7 @@ proto.heap_profiler.dump = function(s)
     return true
 end
 
-proto.heap_profiler.stop = function()
+proto.heap.stop = function()
     ffi_C.ngx_lua_ffi_heap_profiler_stop()
     return true
 end
