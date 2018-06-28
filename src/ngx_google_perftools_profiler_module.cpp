@@ -238,6 +238,8 @@ ngx_google_perftools_profiler_worker(ngx_cycle_t *cycle)
 
 /////////////////////////////////////////////////////////////////
 
+extern "C" {
+
 void
 ngx_lua_ffi_cpu_profiler_start(u_char* profile)
 {
@@ -275,5 +277,7 @@ ngx_lua_ffi_heap_profiler_stop()
         HeapProfilerStop();
     }
 }
+
+}   // extern "C"
 
 /////////////////////////////////////////////////////////////////
