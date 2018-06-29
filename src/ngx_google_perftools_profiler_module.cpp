@@ -234,7 +234,7 @@ ngx_google_perftools_profiler_worker(ngx_cycle_t *cycle)
     return NGX_OK;
 }
 
-// The code below is for lua-resty-gperftoos
+// The code below is for lua-resty-gperftools
 
 /////////////////////////////////////////////////////////////////
 
