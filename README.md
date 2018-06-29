@@ -40,6 +40,8 @@ Then you can use `pprof` to visualize results, for example:
 pprof --svg /usr/local/nginx/sbin/nginx ./ngx_prof.4342 >a.svg
 pprof --svg /usr/local/nginx/sbin/nginx ./ngx_prof.4342.0007.heap >b.svg
 ```
+The svg samples can find in *svg* directory.
+
 ## Lua API
 
 You can use the Lua API binding [`lua-resty-gperftools`](https://github.com/chronolaw/lua-resty-gperftools) 
