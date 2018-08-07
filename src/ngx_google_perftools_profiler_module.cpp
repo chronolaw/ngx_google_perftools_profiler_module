@@ -38,7 +38,7 @@ static ngx_command_t  ngx_google_perftools_profiler_commands[] = {
       NGX_MAIN_CONF|NGX_DIRECT_CONF|NGX_CONF_1MORE,
       ngx_google_perftools_profiler,  //ngx_conf_set_str_slot,
       0,
-      offsetof(ngx_google_perftools_profiler_conf_t, profiles),
+      0, //offsetof(ngx_google_perftools_profiler_conf_t, profiles),
       NULL },
 
       ngx_null_command
